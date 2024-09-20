@@ -1,10 +1,10 @@
-matplotlib==3.8.4
-numpy==2.1.1
-pandas==2.2.3
-plotly==5.22.0
-Requests==2.32.3
-scikit_learn==1.4.2
+matplotlib
+numpy
+pandas
+plotly
+Requests
+scikit_learn
 streamlit
 tensorflow
 tensorflow_intel
-streamlit>=1.32.0
+streamlit>
