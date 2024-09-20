@@ -5,12 +5,3 @@ font = "sans serif"
 [layout]
 wide = true
 
-[server]
-headless = true
-enableCORS = false
-server.maxUploadSize = 200
-runOnSave = false
-server.threaded = true
-enableWebsocketCompression = true
-threaded = true
-maxUploadSize = 100
