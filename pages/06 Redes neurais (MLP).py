@@ -19,8 +19,8 @@ with st.sidebar:
                 - Fiap Postech - 3DTAT''')
     linkedin_url = "https://www.linkedin.com/in/wesleyesantos/"
     youtube_url = "https://www.youtube.com/@Wesley_santos-Excel_PowerBI"
-    st.sidebar.markdown(f"""<div class="icon-container"><a href="{linkedin_url}" target="_blank"><img src="https://github.com/wesleyesantos/Datathon/blob/main/Images/linkedin.png?raw=true" width="30"/></a><a href="{youtube_url}" target="_blank"><img src="https://github.com/wesleyesantos/Datathon/blob/main/Images/youtube.png?raw=true" width="30"/></a></div>""", unsafe_allow_html=True)
-    st.sidebar.image('https://github.com/wesleyesantos/Datathon/blob/main/Images/eu.jpg?raw=true', use_column_width=True)
+    st.sidebar.markdown(f"""<div class="icon-container"><a href="{linkedin_url}" target="_blank"><img src="https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/linkedin.png?raw=true" width="30"/></a><a href="{youtube_url}" target="_blank"><img src="https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/youtube.png?raw=true" width="30"/></a></div>""", unsafe_allow_html=True)
+    st.sidebar.image('https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/eu.jpg?raw=true', use_column_width=True)
 
 st.subheader(':blue[Machine Learn - Redes Neurais (MLP)]', divider='blue')
 st.markdown('''Realizei o modelo <b><font color='blue'>MLP (MultiLayer Perceptron)</b></font> onde puxei a previsão da nota de 2023. Foram realizadas as seguintes etapas para realização do modelo.''', unsafe_allow_html=True)
