@@ -1,0 +1,14 @@
+[theme]
+base = "light"
+font = "sans serif"
+
+[layout]
+wide = true
+
+[server]
+headless = true
+enableCORS = false
+enableWebsocketCompression = false
+server.maxUploadSize = 200
+runOnSave = false
+server.threaded = true
