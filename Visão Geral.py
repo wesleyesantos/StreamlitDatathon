@@ -1,4 +1,5 @@
 import streamlit as st
+pip install --upgrade pip
 
 st.set_page_config(layout = "wide")
 
