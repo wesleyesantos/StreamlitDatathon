@@ -44,19 +44,27 @@ with st.container():
         col, col0 = st.columns([1, 2])
         with col:
             st.plotly_chart(fig, use_container_width=True)
-    
-        # Gráfico Pedras por ano (INDE)
         df_pedra_aluno = df.groupby(['PEDRA', 'ANO']).size().reset_index(name='Contagem').sort_values(by='Contagem', ascending=False)
         ordem_pedras = ['Quartzo', 'Ágata', 'Ametista', 'Topázio']
         df_pedra_aluno['PEDRA'] = pd.Categorical(df_pedra_aluno['PEDRA'], categories=ordem_pedras, ordered=True)
-        df_pedra_aluno2 = df_pedra_aluno2.rename(columns={'NOME': 'Quantidade'})
+
+
+
+
+        
+        # Gráfico Pedras por ano (INDE)
+        df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
+        df_pedra_aluno2 = df_pedra_aluno2.rename(columns={'NOME': 'Quantidade'})  # Alterando 'Contagem' para 'Quantidade'
         total_por_fase = df_pedra_aluno2.groupby('FASE')['Quantidade'].sum().reset_index()
         total_por_fase = total_por_fase.rename(columns={'Quantidade': 'Total_Fase'})
         df_pedra_aluno2 = df_pedra_aluno2.merge(total_por_fase, on='FASE')
         df_pedra_aluno2['Percentual'] = df_pedra_aluno2['Quantidade'] / df_pedra_aluno2['Total_Fase'] * 100
+        st.write("DataFrame Final:", df_pedra_aluno2)
         st.markdown('''##### <font color='blue'>PEDRAS</font>''', unsafe_allow_html=True)
         st.markdown('''.''', unsafe_allow_html=True)
         try:
+            st.write("Colunas do DataFrame:", df_pedra_aluno2.columns)
+            st.write("Primeiras linhas do DataFrame:", df_pedra_aluno2.head())
             fig = px.bar(df_pedra_aluno2, 
                          x='FASE', 
                          y='Percentual', 
@@ -64,8 +72,12 @@ with st.container():
                          title='Percentual de Nomes por Fase e Pedra',
                          labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'},
                          text='Percentual')
-        fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
-        st.plotly_chart(fig, use_container_width=True)
+            fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
+            st.plotly_chart(fig, use_container_width=True)
+
+
+
+    
         
         
     #Ponto de Virada
