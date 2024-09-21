@@ -212,7 +212,12 @@ with st.container():
         col7, col8= st.columns([3,1])
         with col7:
             multi = st.multiselect('Selecione um ou mais alunos', df_aluno.index.unique(), key='multi')
-            
+            def clear_multi():
+                st.session_state.multiselect = []
+                return
+                
+            multi = st.multiselect('Selecione um ou mais alunos', df_aluno.index.unique(), key='multiselect')
+                            
         with col8:
             anos_disponiveis = df['ANO'].unique()
             ano_selecionado = st.selectbox('Selecione o ano', [None] + list(anos_disponiveis), key='ano_selecionado')
@@ -246,12 +251,7 @@ with st.container():
 #             st.experimental_rerun()
         
         # create a function that sets the value in state back to an empty list
-        def clear_multi():
-            st.session_state.multiselect = []
-            return
-            
-        st.button("Clear multiselect", on_click=clear_multi)
-     
+    
         if multi:
             df_filtrado = df_filtrado[df_filtrado.index.isin(multi)]
 
@@ -269,6 +269,7 @@ with st.container():
         elif comparador_inde == 'Menor que':
             df_filtrado = df_filtrado[df_filtrado['INDE'] < valor_inde]
 
-        st.write('Resultado dos filtros:')
+        #Limpar filtro
+        st.button("Clear multiselect", on_click=clear_multi)
+        
         st.table(df_filtrado)
-
