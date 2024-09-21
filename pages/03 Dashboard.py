@@ -47,8 +47,10 @@ with st.container():
         df_pedra_aluno = df.groupby(['PEDRA', 'ANO']).size().reset_index(name='Contagem').sort_values(by='Contagem', ascending=False)
         ordem_pedras = ['Quartzo', 'Ágata', 'Ametista', 'Topázio']
         df_pedra_aluno['PEDRA'] = pd.Categorical(df_pedra_aluno['PEDRA'], categories=ordem_pedras, ordered=True)
+
+
         
-        # Gráfico Pedras por ano (INDE)
+        # Gráfico Pedras e fase por volume de aluno
         df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
         df_pedra_aluno2 = df_pedra_aluno2.rename(columns={'NOME': 'Quantidade'})
         total_por_fase = df_pedra_aluno2.groupby('FASE')['Quantidade'].sum().reset_index()
@@ -59,6 +61,9 @@ with st.container():
         st.markdown('''.''', unsafe_allow_html=True)
         fig = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', color='PEDRA', title='Percentual de Nomes por Fase e Pedra', labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'}, text='Percentual')
         fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
+        st.plotly_chart(fig, use_container_width=True)
+        #Gráfico volume de alunos por fase e pedra
+        fig = px.bar(df_pedra_aluno2,x='FASE', y='Quantidade', color='PEDRA', title='Contagem de Nomes por Fase e Pedra', labels={'FASE': 'Fase', 'Contagem': 'Contagem de Nomes'})
         st.plotly_chart(fig, use_container_width=True)
       
     #Ponto de Virada
