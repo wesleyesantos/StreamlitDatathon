@@ -237,12 +237,14 @@ with st.container():
 
 
         if st.button('Limpar Filtros', type="primary"):
-            #st.session_state['aluno_selecionado'] = ""
+            st.session_state['aluno_selecionado'] = []
             st.session_state['ano_selecionado'] = None
             st.session_state['turma_selecionada'] = None
             st.session_state['fase_selecionada'] = None
             st.session_state['comparador_inde'] = 'Nenhum'
             st.session_state['valor_inde'] = 0
+
+        st.experimental_rerun()
         
         if aluno_selecionado:
             df_filtrado = df_filtrado[df_filtrado.index.isin(aluno_selecionado)]
