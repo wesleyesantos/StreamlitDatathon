@@ -217,6 +217,8 @@ with st.container():
                 return
                 
             multi = st.multiselect('Selecione um ou mais alunos', df_aluno.index.unique(), key='multiselect')
+            #Limpar filtro
+            st.button("Clear multiselect", on_click=clear_multi)
                             
         with col8:
             anos_disponiveis = df['ANO'].unique()
@@ -268,8 +270,5 @@ with st.container():
             df_filtrado = df_filtrado[df_filtrado['INDE'] > valor_inde]
         elif comparador_inde == 'Menor que':
             df_filtrado = df_filtrado[df_filtrado['INDE'] < valor_inde]
-
-        #Limpar filtro
-        st.button("Clear multiselect", on_click=clear_multi)
-        
+       
         st.table(df_filtrado)
