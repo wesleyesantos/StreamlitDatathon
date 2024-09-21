@@ -39,7 +39,7 @@ st.markdown('''
         9. Fazer previsões.''', unsafe_allow_html=True)
         
 #Upload de dados
-df = pd.read_csv('https://github.com/wesleyesantos/Datathon/raw/main/df_aluno.csv')
+df = pd.read_csv('https://github.com/wesleyesantos/StreamlitDatathon/raw/refs/heads/main/assets/df_aluno.csv')
 
 with st.container():
     # Definir variáveis de entrada (X) e variável de saída (y)
