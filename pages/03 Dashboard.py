@@ -237,7 +237,7 @@ with st.container():
 
 
         if st.button('Limpar Filtros', type="primary"):
-            st.session_state['aluno_selecionado'] = ""
+            #st.session_state['aluno_selecionado'] = ""
             st.session_state['ano_selecionado'] = None
             st.session_state['turma_selecionada'] = None
             st.session_state['fase_selecionada'] = None
