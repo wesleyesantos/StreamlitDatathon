@@ -232,14 +232,6 @@ with st.container():
         with col12:
             valor_inde = st.number_input('Digite o valor para o INDE', step=1, key='valor_inde')
 
-        if st.button('Limpar Filtros', type="primary"):
-            st.session_state['aluno_selecionado'] = []
-            st.session_state['ano_selecionado'] = None
-            st.session_state['turma_selecionada'] = None
-            st.session_state['fase_selecionada'] = None
-            st.session_state['comparador_inde'] = 'Nenhum'
-            st.session_state['valor_inde'] = 0
-
         df_filtrado = df_aluno.copy()
         df_filtrado['PONTO_VIRADA'] = df_filtrado['PONTO_VIRADA'].replace({0: 'Não', 1: 'Sim'})
 
@@ -259,6 +251,14 @@ with st.container():
             df_filtrado = df_filtrado[df_filtrado['INDE'] > valor_inde]
         elif comparador_inde == 'Menor que':
             df_filtrado = df_filtrado[df_filtrado['INDE'] < valor_inde]
+
+        if st.button('Limpar Filtros', type="primary"):
+            st.session_state['aluno_selecionado'] = []
+            st.session_state['ano_selecionado'] = None
+            st.session_state['turma_selecionada'] = None
+            st.session_state['fase_selecionada'] = None
+            st.session_state['comparador_inde'] = 'Nenhum'
+            st.session_state['valor_inde'] = 0
 
         st.write('Resultado dos filtros:')
         st.table(df_filtrado)
