@@ -211,7 +211,7 @@ with st.container():
         
         col7, col8= st.columns([3,1])
         with col7:
-            multi = st.multiselect('Selecione um ou mais alunos', df_aluno.index.unique(), key='aluno_selecionado')
+            multi = st.multiselect('Selecione um ou mais alunos', df_aluno.index.unique(), key='multi')
             
         with col8:
             anos_disponiveis = df['ANO'].unique()
