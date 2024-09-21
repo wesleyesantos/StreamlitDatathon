@@ -19,7 +19,7 @@ st.subheader(':blue[Dashboard 🎯]',divider='blue')
 
 st.markdown('''Aqui trago as métricas que gerei com a análise do relatório PEDE da PASSOS MÁGICOS, onde separei por 3 tópicos, sendo eles Evolução dos alunos, onde trago alguns pontos de vista quanto a alunos que foram melhores ou piores em certos perídos ou até mesmo que progrediram ou regrediram sua pedra no decorrer do tempo,  Indicadores de performance trago a análise particular de cada índice e a visão geral dos INDEs, e por terceiro trago a visão dos índices por aluno.''')
 
-df = pd.read_csv("https://github.com/wesleyesantos/Datathon/raw/main/df_aluno.csv")
+df = pd.read_csv("https://github.com/wesleyesantos/StreamlitDatathon/raw/refs/heads/main/assets/df_aluno.csv")
 df['ANO'] = df['ANO'].astype(str) 
 
 
