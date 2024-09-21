@@ -49,23 +49,25 @@ with st.container():
         df_pedra_aluno = df.groupby(['PEDRA', 'ANO']).size().reset_index(name='Contagem').sort_values(by='Contagem', ascending=False)
         ordem_pedras = ['Quartzo', 'Ágata', 'Ametista', 'Topázio']
         df_pedra_aluno['PEDRA'] = pd.Categorical(df_pedra_aluno['PEDRA'], categories=ordem_pedras, ordered=True)
-        df_pedra_aluno = df_pedra_aluno.sort_values(by='PEDRA')
-        fig1 = px.line(df_pedra_aluno, x='PEDRA', y='Contagem', color='ANO')
-        fig1.update_layout(width=800, height=600, autosize=True, legend_title='Período', title='Quantidade de alunos por Pedra', xaxis_title='', yaxis_title='')
-        with col0:
-            st.plotly_chart(fig1, use_container_width=True)
-
-        # Gráfico Volume de alunos por pedra e fase
-        df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
         df_pedra_aluno2 = df_pedra_aluno2.rename(columns={'NOME': 'Quantidade'})
-        st.markdown('''##### <font color='blue'>PEDRAS''', unsafe_allow_html=True)
+        total_por_fase = df_pedra_aluno2.groupby('FASE')['Quantidade'].sum().reset_index()
+        total_por_fase = total_por_fase.rename(columns={'Quantidade': 'Total_Fase'})
+        df_pedra_aluno2 = df_pedra_aluno2.merge(total_por_fase, on='FASE')
+        df_pedra_aluno2['Percentual'] = df_pedra_aluno2['Quantidade'] / df_pedra_aluno2['Total_Fase'] * 100
+        st.markdown('''##### <font color='blue'>PEDRAS</font>''', unsafe_allow_html=True)
         st.markdown('''.''', unsafe_allow_html=True)
-        fig = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', 
-             color='PEDRA', 
-             title='Percentual de Nomes por Fase e Pedra',
-             labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'},
-             text='Percentual')
-        fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
+        try:
+            fig = px.bar(df_pedra_aluno2, 
+                         x='FASE', 
+                         y='Percentual', 
+                         color='PEDRA', 
+                         title='Percentual de Nomes por Fase e Pedra',
+                         labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'},
+                         text='Percentual')
+        
+            # Ajustando o layout do gráfico para mostrar os percentuais
+            fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
+        
         st.plotly_chart(fig, use_container_width=True)
         
         
