@@ -26,7 +26,7 @@ st.subheader(':blue[Visão geral do Projeto]',divider='blue')
 st.markdown("<big><big><big><big><big><i><b> Seja Bem vindo ao meu Datathon! 👋", unsafe_allow_html=True)
 
 st.markdown('''Desenvolvedor: Wesley Estevão dos Santos | RM352704<br> 
-            Postech FIAP  <br>
+            Postech FIAP + Alura <br>
             Curso: Data Analytics | 3DTAT
             ''', unsafe_allow_html=True)
 
