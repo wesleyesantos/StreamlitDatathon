@@ -81,8 +81,8 @@ with st.container():
         st.markdown('''.''', unsafe_allow_html=True)
         
         # Criando gráfico de barras com percentual
-        try:
-            fig = px.bar(df_pedra_aluno2, 
+        
+        fig = px.bar(df_pedra_aluno2, 
                          x='FASE', 
                          y='Percentual', 
                          color='PEDRA', 
@@ -91,10 +91,10 @@ with st.container():
                          text='Percentual')
         
             # Ajustando o layout do gráfico para mostrar os percentuais
-            fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
+        fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
         
             # Exibindo o gráfico no Streamlit
-            st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
 
 
 
