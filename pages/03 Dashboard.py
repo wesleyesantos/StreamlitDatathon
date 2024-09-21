@@ -55,10 +55,12 @@ with st.container():
         with col0:
             st.plotly_chart(fig1, use_container_width=True)
 
+        # Gráfico Volume de alunos por pedra e fase
+        df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
         st.markdown('''##### <font color='blue'>PEDRAS''', unsafe_allow_html=True)
-        st.markdown('''O acompanhamento nutricional mesmo quebrado por fase não demonstrou melhoras, sendo um indicador para entrar como alerta para melhor acompanhamento e desenvolvimento de questões alimentares dos alunos e seu bem estar.''', unsafe_allow_html=True)
-        fig5 = px.box(df, x='FASE', y='INDE', color='PEDRA', title='INDE detalhado por FASE e PEDRA', labels={'FASE': 'Fase', 'PEDRA': 'PEDRA'}, points="all")
-        st.plotly_chart(fig5, use_container_width=True)
+        st.markdown('''.''', unsafe_allow_html=True)
+        fig = px.box(df_pedra_aluno2, x='FASE', y='INDE', color='PEDRA', title='INDE detalhado por FASE e PEDRA', labels={'FASE': 'Fase', 'PEDRA': 'PEDRA'}, points="all")
+        st.plotly_chart(fig, use_container_width=True)
         
         
     #Ponto de Virada
