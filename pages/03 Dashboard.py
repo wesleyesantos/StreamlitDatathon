@@ -57,43 +57,15 @@ with st.container():
         
         # Gráfico Pedras por ano (INDE)
         df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
-        df_pedra_aluno2 = df_pedra_aluno2.rename(columns={'NOME': 'Quantidade'})  # Alterando 'Contagem' para 'Quantidade'
-        
-        # Calculando o total de quantidades por fase
+        df_pedra_aluno2 = df_pedra_aluno2.rename(columns={'NOME': 'Quantidade'})
         total_por_fase = df_pedra_aluno2.groupby('FASE')['Quantidade'].sum().reset_index()
         total_por_fase = total_por_fase.rename(columns={'Quantidade': 'Total_Fase'})
-        
-        # Unindo os dados para calcular o percentual
         df_pedra_aluno2 = df_pedra_aluno2.merge(total_por_fase, on='FASE')
         df_pedra_aluno2['Percentual'] = df_pedra_aluno2['Quantidade'] / df_pedra_aluno2['Total_Fase'] * 100
-        
-        # Verificando o DataFrame final
-        st.write("DataFrame Final:", df_pedra_aluno2)
-        
-        # Verificando os tipos de dados
-        st.write("Tipos de Dados:", df_pedra_aluno2.dtypes)
-        
-        # Verificando se há valores nulos
-        st.write("Valores Nulos:", df_pedra_aluno2.isnull().sum())
-        
-        # Exibindo título no Streamlit
         st.markdown('''##### <font color='blue'>PEDRAS</font>''', unsafe_allow_html=True)
         st.markdown('''.''', unsafe_allow_html=True)
-        
-        # Criando gráfico de barras com percentual
-        
-        fig = px.bar(df_pedra_aluno2, 
-                         x='FASE', 
-                         y='Percentual', 
-                         color='PEDRA', 
-                         title='Percentual de Nomes por Fase e Pedra',
-                         labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'},
-                         text='Percentual')
-        
-            # Ajustando o layout do gráfico para mostrar os percentuais
+        fig = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', color='PEDRA', title='Percentual de Nomes por Fase e Pedra', labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'}, text='Percentual')
         fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
-        
-            # Exibindo o gráfico no Streamlit
         st.plotly_chart(fig, use_container_width=True)
 
 
