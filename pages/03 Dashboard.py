@@ -64,9 +64,15 @@ with st.container():
         df_pedra_aluno2['Percentual'] = df_pedra_aluno2['Quantidade'] / df_pedra_aluno2['Total_Fase'] * 100       
         fig = px.bar(df_pedra_aluno2,x='FASE', y='Quantidade', color='PEDRA', title='Volume de Alunos por Fase e Pedra', labels={'FASE': 'Fase', 'Contagem': 'Contagem de Nomes'})
         st.plotly_chart(fig, use_container_width=True)
-        fig2 = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', color='PEDRA', title='Percentual de Alunos por Fase e Pedra', labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'}, text='Percentual')
-        st.plotly_chart(fig2, use_container_width=True)
-        fig2.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
+        figx = px.bar(df_pedra_aluno2, 
+                 x='FASE', 
+                 y='Percentual', 
+                 color='PEDRA', 
+                 title='Percentual de Nomes por Fase e Pedra',
+                 labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'},
+                 text='Percentual')
+        figx.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
+        st.plotly_chart(figx, use_container_width=True)
         
     #Ponto de Virada
     with tab1:
