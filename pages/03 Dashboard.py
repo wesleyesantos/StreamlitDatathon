@@ -211,7 +211,7 @@ with st.container():
         
         col7, col8= st.columns([3,1])
         with col7:
-            aluno_selecionado = st.multiselect('Selecione um ou mais alunos', df_aluno.index.unique(), key='aluno_selecionado')
+            multi = st.multiselect('Selecione um ou mais alunos', df_aluno.index.unique(), key='aluno_selecionado')
             
         with col8:
             anos_disponiveis = df['ANO'].unique()
@@ -259,7 +259,7 @@ with st.container():
 
 
         
-        if aluno_selecionado:
+        if multi:
             df_filtrado = df_filtrado[df_filtrado.index.isin(aluno_selecionado)]
 
         if ano_selecionado:
