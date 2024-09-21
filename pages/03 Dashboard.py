@@ -241,9 +241,10 @@ with st.container():
          #   st.session_state['ano_selecionado'] = None
           #  st.session_state['turma_selecionada'] = None
            # st.session_state['fase_selecionada'] = None
-            #st.session_state['comparador_inde'] = 'Nenhum'
-            #st.session_state['valor_inde'] = 0
-            #st.experimental_rerun()
+           # st.session_state['comparador_inde'] = 'Nenhum'
+           # st.session_state['valor_inde'] = 0
+        #     st.experimental_rerun()
+        
         def clear_multi():
             st.session_state.multiselect = []
             return
