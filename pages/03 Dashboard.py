@@ -58,15 +58,15 @@ with st.container():
         st.markdown('''Ao analisar separadamento as pedras nos gráficos abaixo primeiramente pela quantidade no primeiro gráfico já podemos observar que as primeiras fases se sobressaem, ao ver o gráfico normatizado com o percentual, podemos ver uma estabilidade grande na distribuição do progresso dos alunos .''', unsafe_allow_html=True)
         df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
         df_pedra_aluno2 = df_pedra_aluno2.rename(columns={'NOME': 'Quantidade'})
-        fig2 = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', color='PEDRA', title='Percentual de Alunos por Fase e Pedra', labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'}, text='Percentual')
+        st.plotly_chart(fig2, use_container_width=True)
         total_por_fase = df_pedra_aluno2.groupby('FASE')['Quantidade'].sum().reset_index()
         total_por_fase = total_por_fase.rename(columns={'Quantidade': 'Total_Fase'})
         df_pedra_aluno2 = df_pedra_aluno2.merge(total_por_fase, on='FASE')
         df_pedra_aluno2['Percentual'] = df_pedra_aluno2['Quantidade'] / df_pedra_aluno2['Total_Fase'] * 100       
         fig = px.bar(df_pedra_aluno2,x='FASE', y='Quantidade', color='PEDRA', title='Volume de Alunos por Fase e Pedra', labels={'FASE': 'Fase', 'Contagem': 'Contagem de Nomes'})
         st.plotly_chart(fig, use_container_width=True)
+        fig2 = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', color='PEDRA', title='Percentual de Alunos por Fase e Pedra', labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'}, text='Percentual')
         fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
-        st.plotly_chart(fig2, use_container_width=True)
         
     #Ponto de Virada
     with tab1:
