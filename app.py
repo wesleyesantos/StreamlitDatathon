@@ -1,6 +1,7 @@
 import streamlit as st
 
 st.set_page_config(page_title="Datathon",  page_icon="👨‍👧‍👦",layout = "wide")
+st.sidebar.title("Página Inicial")
 
 st.markdown("""<style>[data-testid="stSidebar"] {background: linear-gradient(180deg, #00c6ff, #0072ff);padding: 20px;}.icon-container {display: flex; align-items: center; margin-bottom: 20px;}.icon-container a {margin-right: 15px;}</style>""", unsafe_allow_html=True)
 with st.sidebar:
