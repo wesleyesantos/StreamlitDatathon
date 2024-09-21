@@ -55,7 +55,7 @@ with st.container():
         
         # Gráfico Pedras e fase por volume de aluno
         st.markdown('''##### <font color='blue'>PEDRAS</font>''', unsafe_allow_html=True)
-        st.markdown('''Ao analisar separadamento as pedras nos gráficos abaixo primeiramente pela quantidade no primeiro gráfico já podemos observar que as primeiras fases se sobressaem, ao ver o gráfico normatizado com o percentual, podemos ver uma estabilidade grande na distribuição do progresso dos alunos .''', unsafe_allow_html=True)
+        st.markdown('''Ao analisar separadamento as pedras nos gráficos abaixo primeiramente pela quantidade no primeiro gráfico já podemos observar que as primeiras fases se sobressaem, ao ver o gráfico normatizado com o percentual, podemos ver uma estabilidade grande na distribuição do progresso dos alunos, porém ainda assim conseguimos ver destaques no Topazio nas fases 0, 4 e 8, nas fases intermediárias Ágata e Ametista estão quase todas acima do 50% dos alunos de cada fase com exceção a fase 8, e na Quartzo a fase que sai como destaque com menos alunos no nível mais baixo é a fase 7 seguida pelas duas primeiras fases.''', unsafe_allow_html=True)
         df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
         df_pedra_aluno2 = df_pedra_aluno2.rename(columns={'NOME': 'Quantidade'})
         total_por_fase = df_pedra_aluno2.groupby('FASE')['Quantidade'].sum().reset_index()
