@@ -57,10 +57,9 @@ with st.container():
 
         # Gráfico Volume de alunos por pedra e fase
         df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
-        st.table(df_pedra_aluno2.head())
         st.markdown('''##### <font color='blue'>PEDRAS''', unsafe_allow_html=True)
         st.markdown('''.''', unsafe_allow_html=True)
-        fig = px.box(df_pedra_aluno2, x='FASE', y='INDE', color='PEDRA', title='INDE detalhado por FASE e PEDRA', labels={'FASE': 'Fase', 'PEDRA': 'PEDRA'}, points="all")
+        fig = px.box(df_pedra_aluno2, x='FASE', y='NOME', color='PEDRA', title='INDE detalhado por FASE e PEDRA', labels={'FASE': 'Fase', 'PEDRA': 'PEDRA'}, points="all")
         st.plotly_chart(fig, use_container_width=True)
         
         
