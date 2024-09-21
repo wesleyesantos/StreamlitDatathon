@@ -13,3 +13,6 @@ with st.sidebar:
     st.sidebar.image('https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/eu.jpg?raw=true', use_column_width=True)
     
 st.subheader(':blue[Conclusão]',divider='blue')
+st.markdown('''Com o trabalho realizado cheguei as seguintes conclusões abaixo:''')
+st.markdown('''- <b><font color='blue'>Pedras:</b></font> Ao analisar as pedras já vemos de cara que maior volume dos alunos estão na penultima pedra que é a Ametista, ou seja uma ótima classificação estão a um passo da Topázio que é a maior pedra, porém quando abrimos a análise a nível fase conseguimos ver que a última fase carrega um volume maior de alunos na pedra mais baixa e o percentil de alunos nos níveis intermediários (Ágata e Ametista) estão com percentual abaixo da média, o que podemos considerar um ponto de atenção mesmo contendo um volume de alunos menor, a atuação preventiva no Gap irá tratar o problema evitando que o mesmo ocorrá quando tiver uma quantidade grande de alunos na fase em questão.
+
