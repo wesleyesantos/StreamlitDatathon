@@ -61,12 +61,12 @@ with st.container():
         df_pedra_aluno2 = df_pedra_aluno2.merge(total_por_fase, on='FASE')
         df_pedra_aluno2['Percentual'] = df_pedra_aluno2['Quantidade'] / df_pedra_aluno2['Total_Fase'] * 100
         st.markdown('''##### <font color='blue'>PEDRAS</font>''', unsafe_allow_html=True)
-        st.markdown('''Ao analisar separadamento as pedras e vermos os dois gráficos abaixo primeiramente pela quantidade no primeiro gráfico já podemos observar que a as .''', unsafe_allow_html=True)
-        fig = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', color='PEDRA', title='Percentual de Nomes por Fase e Pedra', labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'}, text='Percentual')
-        fig = px.bar(df_pedra_aluno2,x='FASE', y='Quantidade', color='PEDRA', title='Contagem de Nomes por Fase e Pedra', labels={'FASE': 'Fase', 'Contagem': 'Contagem de Nomes'})
+        st.markdown('''Ao analisar separadamento as pedras nos gráficos abaixo primeiramente pela quantidade no primeiro gráfico já podemos observar que as primeiras fases se sobressaem, ao ver o gráfico normatizado com o percentual, podemos ver uma estabilidade grande na distribuição do progresso dos alunos .''', unsafe_allow_html=True)
+        fig2 = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', color='PEDRA', title='Percentual de Alunos por Fase e Pedra', labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'}, text='Percentual')
+        fig = px.bar(df_pedra_aluno2,x='FASE', y='Quantidade', color='PEDRA', title='Volume de Alunos por Fase e Pedra', labels={'FASE': 'Fase', 'Contagem': 'Contagem de Nomes'})
         st.plotly_chart(fig, use_container_width=True)
         fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig2, use_container_width=True)
         
     #Ponto de Virada
     with tab1:
