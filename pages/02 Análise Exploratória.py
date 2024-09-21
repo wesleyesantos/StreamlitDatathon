@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import requests
 
-st.set_page_config(layout = "wide")
+st.set_page_config(page_title="Datathon Análise Exploratória",  page_icon="💎",layout = "wide")
 st.markdown("""<style>[data-testid="stSidebar"] {background: linear-gradient(180deg, #00c6ff, #0072ff);padding: 20px;}.icon-container {display: flex; align-items: center; margin-bottom: 20px;}.icon-container a {margin-right: 15px;}</style>""", unsafe_allow_html=True)
 with st.sidebar:
     st.markdown('''<font face= Helvetica><b><u>Desenvolvedor</u></b></font>''', unsafe_allow_html=True)
