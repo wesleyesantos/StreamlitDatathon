@@ -236,14 +236,27 @@ with st.container():
         df_filtrado['PONTO_VIRADA'] = df_filtrado['PONTO_VIRADA'].replace({0: 'Não', 1: 'Sim'})
 
 
-        if st.button('Limpar Filtros', type="primary"):
-            st.session_state['aluno_selecionado'] = []
-            st.session_state['ano_selecionado'] = None
-            st.session_state['turma_selecionada'] = None
-            st.session_state['fase_selecionada'] = None
-            st.session_state['comparador_inde'] = 'Nenhum'
-            st.session_state['valor_inde'] = 0
-            st.experimental_rerun()
+       # if st.button('Limpar Filtros', type="primary"):
+        #    st.session_state['aluno_selecionado'] = []
+         #   st.session_state['ano_selecionado'] = None
+          #  st.session_state['turma_selecionada'] = None
+           # st.session_state['fase_selecionada'] = None
+            #st.session_state['comparador_inde'] = 'Nenhum'
+            #st.session_state['valor_inde'] = 0
+            #st.experimental_rerun()
+        def clear_multi():
+            st.session_state.multiselect = []
+            return
+
+        # check state
+        st.session_state
+        #create your button to clear the state of the multiselect
+        st.button("Clear multiselect", on_click=clear_multi)
+
+
+
+
+
         
         if aluno_selecionado:
             df_filtrado = df_filtrado[df_filtrado.index.isin(aluno_selecionado)]
