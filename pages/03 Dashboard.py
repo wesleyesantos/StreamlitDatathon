@@ -253,7 +253,7 @@ with st.container():
         st.button("Clear multiselect", on_click=clear_multi)
      
         if multi:
-            df_filtrado = df_filtrado[df_filtrado.index.isin(aluno_selecionado)]
+            df_filtrado = df_filtrado[df_filtrado.index.isin(multi)]
 
         if ano_selecionado:
             df_filtrado = df_filtrado[df_filtrado['ANO'] == ano_selecionado]
