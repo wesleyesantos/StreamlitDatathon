@@ -47,13 +47,6 @@ with st.container():
         df_pedra_aluno = df.groupby(['PEDRA', 'ANO']).size().reset_index(name='Contagem').sort_values(by='Contagem', ascending=False)
         ordem_pedras = ['Quartzo', 'Ágata', 'Ametista', 'Topázio']
         df_pedra_aluno['PEDRA'] = pd.Categorical(df_pedra_aluno['PEDRA'], categories=ordem_pedras, ordered=True)
-
-
-
-
-
-        
-
         
         # Gráfico Pedras por ano (INDE)
         df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
@@ -67,16 +60,7 @@ with st.container():
         fig = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', color='PEDRA', title='Percentual de Nomes por Fase e Pedra', labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'}, text='Percentual')
         fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
         st.plotly_chart(fig, use_container_width=True)
-
-
-
-
-
-
-    
-    
-        
-        
+      
     #Ponto de Virada
     with tab1:
         c0, c1, c2 = st.columns([1,1,5])
