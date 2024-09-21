@@ -60,7 +60,12 @@ with st.container():
         df_pedra_aluno2 = df_pedra_aluno2.rename(columns={'NOME': 'Quantidade'})
         st.markdown('''##### <font color='blue'>PEDRAS''', unsafe_allow_html=True)
         st.markdown('''.''', unsafe_allow_html=True)
-        fig = px.bar(df_pedra_aluno2, x='FASE',y='Quantidade',color='PEDRA',title='Quantidade de Alunos por Fase e Pedra',labels={'FASE': 'Fase', 'Quantidade': 'Quantidade de Alunos'})
+        fig = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', 
+             color='PEDRA', 
+             title='Percentual de Nomes por Fase e Pedra',
+             labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'},
+             text='Percentual')
+        fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
         st.plotly_chart(fig, use_container_width=True)
         
         
