@@ -216,7 +216,7 @@ with st.container():
                 return
                 
             multi = st.multiselect('Selecione um ou mais alunos', df_aluno.index.unique(), key='multiselect')
-            st.button("Clear multiselect", on_click=clear_multi)
+            st.button("Limpar alunos", on_click=clear_multi)
                             
         with col8:
             anos_disponiveis = df['ANO'].unique()
