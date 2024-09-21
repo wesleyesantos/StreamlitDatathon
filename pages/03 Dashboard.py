@@ -188,7 +188,7 @@ with st.container():
     # Desempenho Psicopedagógica
     with tab5:
         #FILTROS
-        if 'aluno_selecionado' not in st.session_state:
+        if 'multi' not in st.session_state:
             st.session_state['aluno_selecionado'] = []
 
         if 'ano_selecionado' not in st.session_state:
@@ -236,23 +236,34 @@ with st.container():
         df_filtrado['PONTO_VIRADA'] = df_filtrado['PONTO_VIRADA'].replace({0: 'Não', 1: 'Sim'})
 
 
-       # if st.button('Limpar Filtros', type="primary"):
-        #    st.session_state['aluno_selecionado'] = []
-         #   st.session_state['ano_selecionado'] = None
-          #  st.session_state['turma_selecionada'] = None
-           # st.session_state['fase_selecionada'] = None
-           # st.session_state['comparador_inde'] = 'Nenhum'
-           # st.session_state['valor_inde'] = 0
-        #     st.experimental_rerun()
+#       if st.button('Limpar Filtros', type="primary"):
+#           st.session_state['aluno_selecionado'] = []
+#            st.session_state['ano_selecionado'] = None
+#            st.session_state['turma_selecionada'] = None
+#            st.session_state['fase_selecionada'] = None
+#            st.session_state['comparador_inde'] = 'Nenhum'
+#            st.session_state['valor_inde'] = 0
+#             st.experimental_rerun()
         
+        # create a function that sets the value in state back to an empty list
         def clear_multi():
             st.session_state.multiselect = []
             return
-
+        
+        st.title("Clear multiselect with stateful button")
+        
+        # create multiselect and automatically put it in state with its key parameter
+        multi = st.multiselect("Pick an option", ["a","b","c","d"], key="multiselect")
+        
         # check state
         st.session_state
+        
         #create your button to clear the state of the multiselect
         st.button("Clear multiselect", on_click=clear_multi)
+
+
+
+
 
 
 
