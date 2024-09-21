@@ -27,7 +27,7 @@ with st.container():
     tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(tabs=["PEDRAS","Ponto de Virada", "Desempenho Acadêmico", "Desempenho Psicossocial", "Desempenho Psicopedagógica", "Análise por Aluno"])
 
     with tab0:
-        st.markdown('''O esquema de classificação das pedras nos mostra os grupos de maios volumes de alunos, podendo ser vistos como níveis baixo, semi-intermediário, intermediário e avançado, abaixo deixo um gráfico pra demonstrar como ranking, a classificação das pedras, sendo Quartzo o nível mais baixo e Topázio que é o maior nível esses dois carregar as menores quantidades de alunos, e na sequência temos os níveis Ágata e Ametista como níveis intermediários que contém as maiores quantidades de alunos conforme visto no gráfico 1.''')
+        st.markdown('''O esquema de classificação das pedras nos mostra os grupos de maios volumes de alunos, podendo ser vistos como níveis baixo, semi-intermediário, intermediário e avançado, abaixo deixo um gráfico pra demonstrar como ranking, a classificação das pedras, sendo Quartzo o nível mais baixo e Topázio que é o maior nível esses dois carregar as menores quantidades de alunos, e na sequência temos os níveis Ágata e Ametista como níveis intermediários que contém as maiores quantidades de alunos conforme visto no gráfico abaixo.''')
         dados = {'Tipo': ['Quartzo', 'Ágata', 'Ametista', 'Topázio'],'INDE_inicial': [2405, 5506, 6868, 8230],'INDE_final': [5506, 6868, 8230, 9294]}
         # Gráfico ranking pedras
         fig = go.Figure()
@@ -54,6 +54,13 @@ with st.container():
         fig1.update_layout(width=800, height=600, autosize=True, legend_title='Período', title='Quantidade de alunos por Pedra', xaxis_title='', yaxis_title='')
         with col0:
             st.plotly_chart(fig1, use_container_width=True)
+
+        st.markdown('''##### <font color='blue'>PEDRAS''', unsafe_allow_html=True)
+        st.markdown('''O acompanhamento nutricional mesmo quebrado por fase não demonstrou melhoras, sendo um indicador para entrar como alerta para melhor acompanhamento e desenvolvimento de questões alimentares dos alunos e seu bem estar.''', unsafe_allow_html=True)
+        fig5 = px.box(df, x='FASE', y='INDE', color='PEDRA', title='INDE detalhado por FASE e PEDRA', labels={'FASE': 'Fase', 'PEDRA': 'PEDRA'}, points="all")
+        st.plotly_chart(fig5, use_container_width=True)
+        
+        
     #Ponto de Virada
     with tab1:
         c0, c1, c2 = st.columns([1,1,5])
