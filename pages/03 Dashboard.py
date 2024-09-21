@@ -47,8 +47,11 @@ with st.container():
         df_pedra_aluno = df.groupby(['PEDRA', 'ANO']).size().reset_index(name='Contagem').sort_values(by='Contagem', ascending=False)
         ordem_pedras = ['Quartzo', 'Ágata', 'Ametista', 'Topázio']
         df_pedra_aluno['PEDRA'] = pd.Categorical(df_pedra_aluno['PEDRA'], categories=ordem_pedras, ordered=True)
-
-
+        df_pedra_aluno = df_pedra_aluno.sort_values(by='PEDRA')
+        fig1 = px.line(df_pedra_aluno, x='PEDRA', y='Contagem', color='ANO')
+        fig1.update_layout(width=800, height=600, autosize=True, legend_title='Período', title='Quantidade de alunos por Pedra', xaxis_title='', yaxis_title='')
+        with col0:
+            st.plotly_chart(fig1, use_container_width=True)
         
         # Gráfico Pedras e fase por volume de aluno
         df_pedra_aluno2 = df.groupby(['PEDRA', 'FASE'])['NOME'].count().reset_index()
@@ -58,14 +61,13 @@ with st.container():
         df_pedra_aluno2 = df_pedra_aluno2.merge(total_por_fase, on='FASE')
         df_pedra_aluno2['Percentual'] = df_pedra_aluno2['Quantidade'] / df_pedra_aluno2['Total_Fase'] * 100
         st.markdown('''##### <font color='blue'>PEDRAS</font>''', unsafe_allow_html=True)
-        st.markdown('''.''', unsafe_allow_html=True)
+        st.markdown('''Ao analisar separadamento as pedras e vermos os dois gráficos abaixo primeiramente pela quantidade no primeiro gráfico já podemos observar que a as .''', unsafe_allow_html=True)
         fig = px.bar(df_pedra_aluno2, x='FASE', y='Percentual', color='PEDRA', title='Percentual de Nomes por Fase e Pedra', labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'}, text='Percentual')
-        fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
-        st.plotly_chart(fig, use_container_width=True)
-        #Gráfico volume de alunos por fase e pedra
         fig = px.bar(df_pedra_aluno2,x='FASE', y='Quantidade', color='PEDRA', title='Contagem de Nomes por Fase e Pedra', labels={'FASE': 'Fase', 'Contagem': 'Contagem de Nomes'})
         st.plotly_chart(fig, use_container_width=True)
-      
+        fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
+        st.plotly_chart(fig, use_container_width=True)
+        
     #Ponto de Virada
     with tab1:
         c0, c1, c2 = st.columns([1,1,5])
