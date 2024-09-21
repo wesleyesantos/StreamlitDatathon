@@ -211,7 +211,6 @@ with st.container():
         
         col7, col8= st.columns([3,1])
         with col7:
-            multi = st.multiselect('Selecione um ou mais alunos', df_aluno.index.unique(), key='multi')
             def clear_multi():
                 st.session_state.multiselect = []
                 return
