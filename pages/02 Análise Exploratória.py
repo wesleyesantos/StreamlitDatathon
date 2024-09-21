@@ -12,7 +12,12 @@ with st.sidebar:
                 - Fiap Postech - 3DTAT''')
     linkedin_url = "https://www.linkedin.com/in/wesleyesantos/"
     youtube_url = "https://www.youtube.com/@Wesley_santos-Excel_PowerBI"
-    st.sidebar.markdown(f"""<div class="icon-container"><a href="{linkedin_url}" target="_blank"><img src="https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/linkedin.png?raw=true" width="30"/></a><a href="{youtube_url}" target="_blank"><img src="https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/youtube.png?raw=true" width="30"/></a></div>""", unsafe_allow_html=True)
+    github_url = "https://github.com/wesleyesantos/StreamlitDatathon"
+    st.sidebar.markdown(f"""<div class="icon-container">
+    <a href="{linkedin_url}" target="_blank"><img src="https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/linkedin.png?raw=true" width="30"/></a>
+    <a href="{youtube_url}" target="_blank"><img src="https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/youtube.png?raw=true" width="30"/></a>
+    <a href="{github_url}" target="_blank"><img src="https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/github.png?raw=true" width="30"/></a>
+    </div>""", unsafe_allow_html=True)
     st.sidebar.image('https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/eu.jpg?raw=true', use_column_width=True)
 
 url = "https://github.com/wesleyesantos/Postech-Datathon/raw/main/PEDE_PASSOS_DATASET_FIAP.csv"
