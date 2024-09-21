@@ -64,10 +64,7 @@ with st.container():
                          title='Percentual de Nomes por Fase e Pedra',
                          labels={'FASE': 'Fase', 'Percentual': 'Percentual de Nomes'},
                          text='Percentual')
-        
-            # Ajustando o layout do gráfico para mostrar os percentuais
-            fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
-        
+        fig.update_traces(texttemplate='%{text:.2f}%', textposition='outside')
         st.plotly_chart(fig, use_container_width=True)
         
         
