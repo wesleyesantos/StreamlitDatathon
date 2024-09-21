@@ -188,8 +188,8 @@ with st.container():
     # Desempenho Psicopedagógica
     with tab5:
         #FILTROS
-        if 'multi' not in st.session_state:
-            st.session_state['aluno_selecionado'] = []
+        if 'multi' not in st.session_state: 
+            st.session_state['multi'] = []
 
         if 'ano_selecionado' not in st.session_state:
             st.session_state['ano_selecionado'] = None
@@ -249,27 +249,9 @@ with st.container():
         def clear_multi():
             st.session_state.multiselect = []
             return
-        
-        st.title("Clear multiselect with stateful button")
-        
-        # create multiselect and automatically put it in state with its key parameter
-        multi = st.multiselect("Pick an option", ["a","b","c","d"], key="multiselect")
-        
-        # check state
-        st.session_state
-        
-        #create your button to clear the state of the multiselect
+            
         st.button("Clear multiselect", on_click=clear_multi)
-
-
-
-
-
-
-
-
-
-        
+     
         if multi:
             df_filtrado = df_filtrado[df_filtrado.index.isin(aluno_selecionado)]
 
