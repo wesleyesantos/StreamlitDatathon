@@ -227,8 +227,7 @@ with st.container():
             st.session_state['valor_inde'] = 0
 
         df_filtrado = df_aluno.copy()
-        df_filtrado = df_filtrado['PONTO_VIRADA'].replace('1','Sim')
-        df_filtrado = df_filtrado['PONTO_VIRADA'].replace('0','Não')
+        df_filtrado['PONTO_VIRADA'] = df_filtrado['PONTO_VIRADA'].replace({0: 'Não', 1: 'Sim'})
 
         if aluno_selecionado:
             df_filtrado = df_filtrado[df_filtrado.index.isin(aluno_selecionado)]
