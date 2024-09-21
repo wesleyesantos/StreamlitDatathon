@@ -246,7 +246,7 @@ with st.container():
 
         if st.button('Limpar Filtros', type="primary"):
             st.session_state.update({
-                'aluno_selecionado': [],
+               # 'aluno_selecionado': [],
                 'ano_selecionado': None,
                 'turma_selecionada': None,
                 'fase_selecionada': None,
