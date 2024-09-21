@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Datathon",  page_icon="💎",layout = "wide")
+st.set_page_config(page_title="Datathon Passos Mágicos",  page_icon="💎",layout = "wide")
 st.sidebar.title("Página Inicial")
 
 st.markdown("""<style>[data-testid="stSidebar"] {background: linear-gradient(180deg, #00c6ff, #0072ff);padding: 20px;}.icon-container {display: flex; align-items: center; margin-bottom: 20px;}.icon-container a {margin-right: 15px;}</style>""", unsafe_allow_html=True)
@@ -47,7 +47,7 @@ with col:
     st.markdown('''A <b><font color='blue'>Associação Passos Mágicos</b></font> é uma organização sem fins lucrativos que atua há 31 anos, focada na transformação da vida de crianças e jovens de baixa renda, oferecendo-lhes melhores oportunidades de vida. Fundada por Michelle Flues e Dimetri Ivanoff em 1992, a instituição começou suas atividades em orfanatos no município de Embu-Guaçu, São Paulo.''', unsafe_allow_html=True)
 
 with col1:
-    st.image('https://github.com/wesleyesantos/Datathon/blob/main/Images/Passos-magicos-icon-cor.png?raw=true', use_column_width=True )
+    st.image('https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/Passos-magicos-icon-cor.png?raw=true', use_column_width=True )
 
 tab1, tab2, tab3 = st.tabs(
     tabs=["Missão e Visão", "Programas e Atividades", "Impacto e Resultados"]
