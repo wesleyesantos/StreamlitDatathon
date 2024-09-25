@@ -30,10 +30,6 @@ st.markdown(
         7. Github: https://docs.github.com/pt,
         8. SILVA, Dario Rodrigues da. Pesquisa do Desenvolvimento Educacional - PEDE 2020. Associação Passos Mágicos, 
         9. SILVA, Dario Rodrigues da. Pesquisa do Desenvolvimento Educacional - PEDE 2021. Associação Passos Mágicos, 
-        10. SILVA, Dario Rodrigues da. Pesquisa do Desenvolvimento Educacional - PEDE 2022. Associação Passos Mágicos,
-        11. Documentação Tensorflow: https://www.tensorflow.org/api_docs,
-        12. Documentação Scikit Learn: https://scikit-learn.org/stable/,
-        13. Documentação Preprocessamento: https://scikit-learn.org/stable/modules/preprocessing.html,
-        14. Documentação Keras: https://keras.io/api/.
+        10. SILVA, Dario Rodrigues da. Pesquisa do Desenvolvimento Educacional - PEDE 2022. Associação Passos Mágicos.
     """, unsafe_allow_html=True
     )
