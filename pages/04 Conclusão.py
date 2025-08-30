@@ -15,7 +15,7 @@ with st.sidebar:
     <a href="{youtube_url}" target="_blank"><img src="https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/youtube.png?raw=true" width="30"/></a>
     <a href="{github_url}" target="_blank"><img src="https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/github.png?raw=true" width="30"/></a>
     </div>""", unsafe_allow_html=True)
-    st.sidebar.image('https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/eu.jpg?raw=true', use_column_width=True)
+    st.sidebar.image('https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/eu.jpg?raw=true')
     
 st.subheader(':blue[Conclusão]',divider='blue')
 st.markdown('''Com o trabalho realizado cheguei as seguintes conclusões abaixo:''')
