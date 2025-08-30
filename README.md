@@ -15,13 +15,15 @@ A aplicação é baseada em dados de alunos de 2020 a 2022, e tem como objetivo 
 
 ## 🛠️ Tecnologias Utilizadas
 
+- **GitHub**: Para fazer upload dos arquivos e conseguir utiliza-los de forma online no aplicativo.
 - **Streamlit**: Para criação da interface web interativa.
-- **Plotly**: Para a construção de gráficos dinâmicos.
-- **Pandas**: Utilizado para analisar os dados.
-- **Scikit Learn | Keras**: Para desenvolver modelo básico de predição de notas.
+- **Google Colab**: Para realizar análise explorátoria da base e ajustar os dados para criação das métricas no streamlit.
 - **Python**: Base para todo o desenvolvimento do projeto, incluindo análise de dados e Machine Learning.
 - **VSCode**: Utilizado para o desenvolvimento e edição do código.
-- **Google Colab**: Para realizar análise explorátoria da base e ajustar os dados para criação das métricas no streamlit.
+### Bibliotecas
+- **Plotly**: Para a construção de gráficos dinâmicos.
+- **Pandas**: Utilizado para analisar os dados.
+  
 
 ## 🚀 Acesse o Projeto
 
