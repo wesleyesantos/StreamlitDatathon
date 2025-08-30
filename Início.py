@@ -52,7 +52,7 @@ with col:
     st.markdown('''A <b><font color='blue'>Associação Passos Mágicos</b></font> é uma organização sem fins lucrativos que atua há 31 anos, focada na transformação da vida de crianças e jovens de baixa renda, oferecendo-lhes melhores oportunidades de vida. Fundada por Michelle Flues e Dimetri Ivanoff em 1992, a instituição começou suas atividades em orfanatos no município de Embu-Guaçu, São Paulo.''', unsafe_allow_html=True)
 
 with col1:
-    st.image('https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/Passos-magicos-icon-cor.png?raw=true', use_column_width=True )
+    st.image('https://github.com/wesleyesantos/StreamlitDatathon/blob/main/images/Passos-magicos-icon-cor.png?raw=true' )
 
 tab1, tab2, tab3 = st.tabs(
     tabs=["Missão e Visão", "Programas e Atividades", "Impacto e Resultados"]
