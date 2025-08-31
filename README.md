@@ -21,8 +21,16 @@ A aplicação é baseada em dados de alunos de 2020 a 2022, e tem como objetivo 
 - **Python**: Base para todo o desenvolvimento do projeto, incluindo análise de dados e Machine Learning.
 - **VSCode**: Utilizado para o desenvolvimento e edição do código.
 ### Bibliotecas
-- **Plotly**: Para a construção de gráficos dinâmicos.
-- **Pandas**: Utilizado para analisar os dados.
+#### Gráficos 
+- **Plotly**
+- **matplotlib**
+#### Análise Exploratória
+- **Pandas**
+- **Numpy**
+### Trabalhar com links 
+- **Requests**
+### Criar aplicação 
+- **streamlit**
   
 
 ## 🚀 Acesse o Projeto
