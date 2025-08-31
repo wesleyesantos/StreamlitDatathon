@@ -1,4 +1,4 @@
-# Análise Exploratória com Streamlit - Metodologia "Passos Mágicos"
+# Análise Exploratória com Python e Deploy em Streamlit  - Metodologia "Passos Mágicos"
 
 Este repositório apresenta uma análise exploratória de dados utilizando o Python, com foco na metodologia "Passos Mágicos". O objetivo deste projeto é fornecer insights e visualizações interativas sobre os dados dos alunos, permitindo a investigação de indicadores como o INDE (Índice de Desempenho Escolar), Ponto de Virada, Pedras e demais indicadores.
 
